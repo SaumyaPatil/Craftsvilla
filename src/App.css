@@ -1,0 +1,6 @@
+.inner-wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: calc(-65px + 100vh);
+}
+
