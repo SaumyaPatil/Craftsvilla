@@ -41,26 +41,21 @@ const RightSection = styled.div`
     display: flex;
     align-items: center;
     font-size: 0.9em;
-    color: #555;
+    color: #000;  // Changed to black for "Select Location"
 
     svg {
       margin-right: 5px;
+      color: #000;  // Location icon color set to black
     }
 
-    &:hover {
-      color: #c2185b;
-      cursor: pointer;
-    }
+    /* No hover effect */
   }
 
   svg {
     font-size: 1.5em;
-    color: #555;
+    color: #c2185b;  // Changed to pink color for other icons
 
-    &:hover {
-      color: #c2185b;
-      cursor: pointer;
-    }
+    /* No hover effect */
   }
 `;
 
@@ -95,27 +90,6 @@ const SearchBar = styled.div`
   }
 `;
 
-const NavBar = styled.nav`
-  display: flex;
-  justify-content: center;
-  gap: 40px;
-  padding: 10px 0;
-  background-color: #fff;
-  border-bottom: 1px solid #eee;
-  width: 100%;
-  max-width: 1300px;
-
-  a {
-    text-decoration: none;
-    font-size: 1em;
-    font-weight: bold;
-    color: #333;
-
-    &:hover {
-      color: #c2185b;
-    }
-  }
-`;
 const SideMenu = styled.div`
   position: fixed;
   top: 0;
@@ -159,7 +133,6 @@ const SideMenu = styled.div`
   }
 `;
 
-
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
@@ -200,15 +173,14 @@ const Header = () => {
         <div className="close-btn" onClick={()=>setMenuOpen((prev) => !prev)}>
           <FiX />
         </div>
-        {[
-      { name: "Fashion", id: "fashion" },
-      { name: "Beauty & Personal Care", id: "beauty" },
-      { name: "Home Decor", id: "home-decor" },
-      { name: "Electronics", id: "electronics" },
-      { name: "Amazing India", id: "amazing-india" }
-    ].map(category => 
-      <a key={category.id} href={`#${category.id}`}>{category.name}</a>
-    )}
+        {[{ name: "Fashion", id: "fashion" },
+          { name: "Beauty & Personal Care", id: "beauty" },
+          { name: "Home Decor", id: "home-decor" },
+          { name: "Electronics", id: "electronics" },
+          { name: "Amazing India", id: "amazing-india" }
+        ].map(category => 
+          <a key={category.id} href={`#${category.id}`}>{category.name}</a>
+        )}
       </SideMenu>
     </HeaderContainer>
   );

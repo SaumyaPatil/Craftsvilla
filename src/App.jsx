@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { createGlobalStyle } from 'styled-components';
 
 import Categories from './components/Categories';
 import EndOfSeasonSale from './components/EndOfSeasonSale';
@@ -17,9 +18,28 @@ const Container = styled.div`
   box-sizing: border-box;
 `;
 
+
+const GlobalStyles = createGlobalStyle`
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html, body {
+    overflow-x: hidden;
+    width: 100%;
+  }
+
+  body {
+    min-width: 100vw;
+  }
+`;
+
 const App = () => {
   return (
     <Container>
+      <GlobalStyles/>
       <Header/>
       <Categories/>
       <Slider/>
